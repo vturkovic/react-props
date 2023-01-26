@@ -1,10 +1,9 @@
-import { FC } from 'react';
-import { NameAgeType } from '../interfaces';
+import { UserInterface } from '../interfaces';
 
-const NameAge: FC<NameAgeType> = ({ name, age }) => {
+const NameAgeComponent = ({ name, age }: UserInterface) => {
   return (
       <h2>Ime: {name} | Godina: {age}</h2>
   );
 };
 
-export default NameAge;
+export default NameAgeComponent;
