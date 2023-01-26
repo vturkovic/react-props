@@ -1,56 +1,46 @@
-import React, { FC } from 'react';
 import { UsersType } from './interfaces';
 import NameSurname from './components/nameSurname';
 import NameAge from './components/nameAge';
 import SurnameAge from './components/surnameAge';
 
-let users: UsersType = [
-  {
-    name: 'Pero', 
-    surname: 'Perić',
-    age: 18
-  },
-  {
-    name: 'Ivo', 
-    surname: 'Ivić',
-    age: 19
-  },
-  {
-    name: 'Marko', 
-    surname: 'Markić',
-    age: 20
-  }
-];
+const App = () => {
 
-const App: FC = () => {
-
-  const nameSurnameUsers = users.map(({ name, surname }) => {
-      return {name, surname};
-  });
-
-  const nameAgeUsers = users.map(({ name, age }) => {
-    return {name, age};
-  });
-
-  const surnameAgeUsers = users.map(({ surname, age }) => {
-    return {surname, age};
-  });
+  const users: UsersType = [
+    {
+      name: 'Pero', 
+      surname: 'Perić',
+      age: 18
+    },
+    {
+      name: 'Ivo', 
+      surname: 'Ivić',
+      age: 19
+    },
+    {
+      name: 'Marko', 
+      surname: 'Markić',
+      age: 20
+    }
+  ];
 
   return (
     <>
       <h1>Komponenta 2</h1>
-      {nameSurnameUsers.map((user, i) => (
-        <NameSurname key={i} {...user} />
-      ))}
+        {users.map((user, i) => (
+          <NameSurname key={`NameSurname-${i}`} name={user.name} surname={user.surname} />
+        ))}
+
       <h1>Komponenta 3</h1>
-      {nameAgeUsers.map((user, i) => (
-        <NameAge key={i} {...user} />
-      ))}
+        {users.map((user, i) => (
+          <NameAge key={`NameAge-${i}`} name={user.name} age={user.age} />
+        ))}
+
       <h1>Komponenta 4</h1>
-      {surnameAgeUsers.map((user, i) => (
-        <SurnameAge key={i} {...user} />
-      ))}
-      <h3>Komponenta 4 - Child Props: {}</h3>
+        {users.map((user, i) => (
+          <SurnameAge key={`SurnameAge-${i}`}>
+            {user}
+          </SurnameAge>
+        ))}
     </>
   );
 }

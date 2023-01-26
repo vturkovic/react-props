@@ -1,11 +1,10 @@
-import React, { FC } from 'react';
-import { SurnameAgeType } from '../interfaces';
+import { FC } from 'react';
+import {  SurnameAgeTypeProps } from '../interfaces';
 
-const SurnameAge: FC<SurnameAgeType> = ({ surname, age }) => {
+const SurnameAge: FC<SurnameAgeTypeProps> = ({ children }) => {
+  console.log(children);
   return (
-    <>
-      <h2>Prezime: {surname} | Godina: {age}</h2>
-    </>
+      <h2>Prezime: {children?.surname} | Godina: {children?.age}</h2>
   );
 };
 

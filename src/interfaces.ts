@@ -13,5 +13,9 @@ export interface NameSurnameType {
 }
 
 export interface SurnameAgeType {
-    surname: string; age: number
+    surname: string; age: number;
+}
+
+export interface SurnameAgeTypeProps {
+    children?: SurnameAgeType;
 }
