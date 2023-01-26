@@ -1,11 +1,11 @@
-import { UsersType } from './interfaces';
-import NameSurname from './components/nameSurname';
-import NameAge from './components/nameAge';
-import SurnameAge from './components/surnameAge';
+import { UserInterface } from './interfaces';
+import NameSurnameComponent from './components/nameSurname';
+import NameAgeComponent from './components/nameAge';
+import SurnameAgeComponent from './components/surnameAge';
 
 const App = () => {
 
-  const users: UsersType = [
+  const users: UserInterface[] = [
     {
       name: 'Pero', 
       surname: 'Perić',
@@ -27,19 +27,19 @@ const App = () => {
     <>
       <h1>Komponenta 2</h1>
         {users.map((user, i) => (
-          <NameSurname key={`NameSurname-${i}`} name={user.name} surname={user.surname} />
+          <NameSurnameComponent key={`NameSurname-${i}`} name={user.name} surname={user.surname} />
         ))}
 
       <h1>Komponenta 3</h1>
         {users.map((user, i) => (
-          <NameAge key={`NameAge-${i}`} name={user.name} age={user.age} />
+          <NameAgeComponent key={`NameAge-${i}`} name={user.name} age={user.age} />
         ))}
 
       <h1>Komponenta 4</h1>
         {users.map((user, i) => (
-          <SurnameAge key={`SurnameAge-${i}`}>
+          <SurnameAgeComponent key={`SurnameAge-${i}`}>
             {user}
-          </SurnameAge>
+          </SurnameAgeComponent>
         ))}
     </>
   );

@@ -1,10 +1,9 @@
-import { FC } from 'react';
-import { NameSurnameType } from '../interfaces';
+import { UserInterface } from '../interfaces';
 
-const NameSurname: FC<NameSurnameType> = ({ name, surname }) => {
+const NameSurnameComponent = ({ name, surname }: UserInterface) => {
   return (
       <h2>Ime: {name} | Prezime: {surname}</h2> 
   );
 };
 
-export default NameSurname;
+export default NameSurnameComponent;
